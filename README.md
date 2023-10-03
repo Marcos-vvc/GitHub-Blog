@@ -1,6 +1,6 @@
 <p align="center">
   <br>
-  <Img src="https://github.com/rafarod21/Ignite-ReactJS-Challenge-GithubBlog/blob/main/git-assets/logo.svg" width=400/>
+  <Img src="https://github.com/Marcos-vvc/GitHub-Blog/blob/main/src/assets/logo-github.svg" width=400/>
   
   <h3 align="center"> Blog pessoal vinculado com as isseus desse repositório :octocat: </h3>
   
