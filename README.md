@@ -75,7 +75,8 @@ npm run dev
 ```
 
 ##### Passo 5: Vizualizando o projeto
-Acesse: http://localhost:5173
+- Acesse: http://localhost:5173 
+- Projeto rodando: [GitHub-Blog](https://github-blog-three-murex.vercel.app)
     
 ## Tecnologias :books:
 
