@@ -1,5 +1,5 @@
+import { useState, useEffect } from 'react'
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
 
 export interface Post {
   id: number
@@ -11,23 +11,11 @@ export interface Post {
   number: number
 }
 
-export interface PostContextType {
-  postView: Post[]
-  isLoadingPosts: boolean
-  fetchPost: (query?: string) => Promise<void>
-}
-
-type Props = {
-  children?: React.ReactNode
-}
-
-export const PostsContext = React.createContext({} as PostContextType)
-
-export const PostsProvider: React.FC<Props> = ({ children }) => {
+export const useFetchPost = () => {
   const [postView, setPostView] = useState<Post[]>([])
   const [isLoadingPosts, setIsLoadingPosts] = useState(false)
 
-  async function fetchPost(query?: string) {
+  const fetchPost = async (query?: string) => {
     setIsLoadingPosts(true)
     try {
       const response = await axios.get(
@@ -46,9 +34,5 @@ export const PostsProvider: React.FC<Props> = ({ children }) => {
     fetchPost('')
   }, [])
 
-  return (
-    <PostsContext.Provider value={{ postView, fetchPost, isLoadingPosts }}>
-      {children}
-    </PostsContext.Provider>
-  )
+  return { postView, fetchPost, isLoadingPosts }
 }

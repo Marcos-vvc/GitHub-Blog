@@ -1,13 +1,12 @@
 import { Profile } from '../../components/Profile'
 import MySVGComponent from '../../components/Spinner'
-import { PostsContext } from '../../contexts/PostsContext'
+import { useFetchPost } from '../../hook/useFetchPost'
 import { PostCard } from '../components/PostCard'
 import { SearchForm } from '../components/SearchForm'
 import { HomeContainer, PostCardContainer } from './styles'
-import { useContext } from 'react'
 
 export function Home() {
-  const { isLoadingPosts, postView } = useContext(PostsContext)
+  const { postView, isLoadingPosts } = useFetchPost()
 
   return (
     <div className="container">

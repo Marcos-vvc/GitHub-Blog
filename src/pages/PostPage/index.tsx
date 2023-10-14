@@ -12,8 +12,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import axios from 'axios'
 import { relativeDateDistanceToNow } from '../../utils/formatter'
 import MySVGComponent from '../../components/Spinner'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import { PostContent } from './components'
 
 interface Post {
   id: number
@@ -92,9 +91,7 @@ export function PostPage() {
         )}
       </ContainerPage>
       <Content>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {postDetail.body}
-        </ReactMarkdown>
+        <PostContent content={postDetail.body} />
       </Content>
     </div>
   )

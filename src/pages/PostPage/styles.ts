@@ -78,6 +78,7 @@ export const Content = styled.div`
   h2,
   h3 {
     margin: 2rem 0 0.5rem;
+    color: ${(props) => props.theme['blue-normal']};
   }
 
   p {

@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
+import { useFetchPost } from '../../../hook/useFetchPost'
 import { SearchFormContainer } from './styles'
-import { PostsContext } from '../../../contexts/PostsContext'
 
 export function SearchForm() {
   const [inputText, setInputText] = useState('')
-  const { postView, fetchPost } = useContext(PostsContext)
+  const { postView, fetchPost } = useFetchPost()
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
